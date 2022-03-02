@@ -1,9 +1,12 @@
-import setuptools
+from setuptools import setup, find_packages
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-setuptools.setup(
+with open('LICENSE') as f:
+    license = f.read()
+
+setup(
     name="twtr",
     version="0.0.1",
     author="palash",
@@ -20,6 +23,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
+    packages=find_packages(exclude=('tests'))
     python_requires=">=3.6",
 )
